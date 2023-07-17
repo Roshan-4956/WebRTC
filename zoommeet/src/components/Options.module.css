@@ -1,0 +1,22 @@
+.root{
+    display: flex;
+    flex-direction: row;
+}
+.gridContainer{
+    width: 100%;
+}
+.container{
+    width: 600px;
+    margin: 35px 0;
+    padding: 0;
+}
+.margin{
+    margin-top: 20px;
+}
+.padding{
+    padding: 20px;
+}
+.paper{
+    padding: '10px 20px';
+    border: '2px solid black',
+}

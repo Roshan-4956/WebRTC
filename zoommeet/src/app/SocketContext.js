@@ -31,7 +31,10 @@ const ContextProvider = ({ children }) => {
                 }
             })
 
-        socket.on('me', (id) => setMe(id));
+        socket.on('me', (id) => {
+            console.log(me);
+            setMe(id)
+        });
 
         socket.on('calluser', ({ from, name: callerName, signal }) => {
             setCall({ isReceivedCall: true, from, name: callerName, signal });
@@ -49,6 +52,7 @@ const ContextProvider = ({ children }) => {
         });
 
         peer.on('stream', (currentStream) => {
+            if(userVideo.current)
             userVideo.current.srcObject = currentStream;
         })
 
@@ -67,6 +71,7 @@ const ContextProvider = ({ children }) => {
         });
 
         peer.on('stream', (currentStream) => {
+            if(userVideo.current)
             userVideo.current.srcObject = currentStream;
         })
 
@@ -82,10 +87,10 @@ const ContextProvider = ({ children }) => {
 
     const leaveCall = () => {
         setCallEnded(true);
-
+        
         connectionRef.current.destroy();
 
-        window.location.reload();
+        // window.location.reload();
     }
 
     return (

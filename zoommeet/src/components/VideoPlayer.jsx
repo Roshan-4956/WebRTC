@@ -14,13 +14,13 @@ export default function VideoPlayer() {
                 <Typography variant="h5" gutterBottom>
                     {name || 'Name'}
                 </Typography>
-                <video playsInline={true} muted={true} ref={myVideo} autoPlay className={styles.video}/>
+                <video playsInline={true}  ref={myVideo} autoPlay className={styles.video}/>
             </Grid>
         </Paper>)}
         {callAccepted && !callEnded && (<Paper className={styles.paper}>
             <Grid item xs={12} md={6}>
                 <Typography variant="h5" gutterBottom>
-                    {call.Name || 'Name'}
+                    {call ? call.name : 'Name'}
                 </Typography>
                 <video playsInline={true} ref={userVideo} autoPlay className={styles.video}/>
             </Grid>
