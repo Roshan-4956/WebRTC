@@ -1,7 +1,7 @@
 # WebRTC
-In the root directory
+###In the root directory
 npm install
 nodemon index.js
 
-In the zoommeet directory
+###In the zoommeet directory
 npm run dev
